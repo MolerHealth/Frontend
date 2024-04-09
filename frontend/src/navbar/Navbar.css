@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Mona-Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mona-Sans'), url('Mona-Sans.woff') format('woff');
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 50px;
+    height: fit-content;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.logo img {
+    width: 40px;
+    height: 29.6px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: fit-content;
+    margin: 0;
+}
+
+nav li {
+    margin-right: 15px; 
+    font-weight: 500;
+    line-height: 19.34px;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+nav li {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+nav li:hover {
+    color: #007BFF; /* Change the color on hover */
+}
+
+.sign-up {
+    border: 2px solid #4169E1;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sign-up:hover {
+    background-color: #4169E1;
+    color: #fff; 
+}
+
