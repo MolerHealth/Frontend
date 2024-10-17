@@ -1,5 +1,6 @@
 import React from "react";
 import GroupPhoto from "../../../Assets/GroupPhoto.png";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -20,9 +21,12 @@ function Hero() {
               </p>
               <div className="w-[402px] h-[62px] flex gap-[19px] mt-[3rem]">
                 <button className="w-[178px] h-[52px] rounded-[13px] border-[7px] border-[#75D79E] flex justify-center items-center bg-[#26BF47]">
-                  <p className="w-fit h-fit text-white font-[700] text-[24px] leading-[31.68px] font-mona">
+                  <Link
+                    to={"login"}
+                    className="w-fit h-fit text-white font-[700] text-[24px] leading-[31.68px] font-mona"
+                  >
                     Login
-                  </p>
+                  </Link>
                 </button>
                 <div className="w-[205px] h-[62px] flex justify-center items-center">
                   <p className="h-fit w-fix font-[700] text-[22px] leading-[29.04px] font-mona text-[#4169E1]">
