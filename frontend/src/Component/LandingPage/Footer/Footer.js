@@ -6,11 +6,11 @@ function Footer() {
       <div className="w-[1440px] h-full flex items-center flex-col">
         <div className="w-[1182px] h-[378px] flex">
           <div>
-            <div>Moler Health</div>
+            <div className="text-[#000000] font-mona">Moler Health</div>
           </div>
           <div className="flex">
             <div>
-              <div>Company</div>
+              <div className="text-[#4169E1]">Company</div>
               <ul>
                 <li>Features</li>
                 <li>About Us</li>
@@ -22,7 +22,7 @@ function Footer() {
               </ul>
             </div>
             <div>
-              <div>Community & Support</div>
+              <div className="text-[#4169E1]">Community & Support</div>
               <ul>
                 <li>Get Involved</li>
                 <li>Documentation</li>
@@ -31,7 +31,7 @@ function Footer() {
               </ul>
             </div>
             <div>
-              <div>Resources</div>
+              <div className="text-[#4169E1]">Resources</div>
               <ul>
                 <li>Blog</li>
                 <li>Privacy Policy</li>
