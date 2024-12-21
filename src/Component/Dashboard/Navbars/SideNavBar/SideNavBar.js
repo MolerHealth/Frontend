@@ -5,6 +5,7 @@ import PatientsSVG from "../../../../Assets/SVG/PatientsSVG.svg";
 import ScheduleSVG from "../../../../Assets/SVG/ScheduleSVG.svg";
 import MessageSVG from "../../../../Assets/SVG/MessageSVG.svg";
 import LogoutSVG from "../../../../Assets/SVG/LogoutSVG.svg";
+import { Link } from "react-router-dom";
 
 class SideNavBar extends Component {
   render() {
@@ -26,9 +27,11 @@ class SideNavBar extends Component {
             </div>
             <div className="flex w-[11.938rem] h-[2.563rem] items-center gap-[1rem] pl-[1.5rem] rounded-[0.25rem]">
               <img src={PatientsSVG} className="text-black" alt="Dashboard" />
-              <div className="font-[500] text-[1rem] leading-[1.65rem] font-mona text-[#333333]">
-                Patient
-              </div>
+              <Link to="/dashboard/patients">
+                <div className="font-[500] text-[1rem] leading-[1.65rem] font-mona text-[#333333]">
+                  Patient
+                </div>
+              </Link>
             </div>
             <div className="flex w-[11.938rem] h-[2.563rem] items-center gap-[1rem] pl-[1.5rem] rounded-[0.25rem]">
               <img src={ScheduleSVG} className="text-black" alt="Dashboard" />
