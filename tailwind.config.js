@@ -11,6 +11,7 @@ module.exports = {
       },
       boxShadow: {
         custom1: "0px 1px 19.2px 0px rgba(0, 0, 0, 0.13)",
+        custom2: "0px 8px 41.2px rgba(0, 0, 0, 0.14)",
       },
       colors: {
         backgroundGrey: "rgba(65, 105, 225, 0.04)",
