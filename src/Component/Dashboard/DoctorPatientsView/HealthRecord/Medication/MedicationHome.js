@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import MedicationIcon from "../../../../../Assets/SVG/MedicationIcon.svg";
+import MedicalCondition from "../../../../../Assets/SVG/MedicalConditionSVG.svg";
 import AddBotton from "../../../../../Assets/SVG/AddBotton.svg";
 import TrashIcon from "../../../../../Assets/SVG/TrashIcon.svg";
 
-class MedicationHome extends Component {
+class MedicalConditionHome extends Component {
   render() {
     return (
       <div className="w-[19.438rem] border border-[#C4C9D3] py-[0.5rem] rounded-[4px]">
@@ -12,11 +12,11 @@ class MedicationHome extends Component {
             <div className="flex gap-[1rem] items-center">
               <img
                 className="size-[1.5rem] gap-[1rem] items-center"
-                src={MedicationIcon}
+                src={MedicalCondition}
                 alt="Allergy Icon"
               />
               <div className="font-[500] font-manrope text-[1.25rem]">
-                Medications
+                Med Conditions
               </div>
             </div>
             <div className="flex gap-[1rem] items-center">
@@ -35,7 +35,7 @@ class MedicationHome extends Component {
               <div className="flex flex-col gap-[0.5rem]">
                 <div className="flex gap-[1rem]">
                   <div className="font-[400] font-manrope text-[1rem]">
-                    Aspirin
+                    Hypertenshion
                   </div>
                 </div>
               </div>
@@ -45,7 +45,7 @@ class MedicationHome extends Component {
               <div className="flex flex-col gap-[0.5rem]">
                 <div className="flex gap-[1rem]">
                   <div className="font-[400] font-manrope text-[1rem]">
-                    Armether
+                    Anemia
                   </div>
                 </div>
               </div>
@@ -55,7 +55,7 @@ class MedicationHome extends Component {
               <div className="flex flex-col gap-[0.5rem]">
                 <div className="flex gap-[1rem]">
                   <div className="font-[400] font-manrope text-[1rem]">
-                    Ciprotab
+                    Diabetes
                   </div>
                 </div>
               </div>
@@ -68,4 +68,4 @@ class MedicationHome extends Component {
   }
 }
 
-export default MedicationHome;
+export default MedicalConditionHome;
