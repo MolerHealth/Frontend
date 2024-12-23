@@ -6,10 +6,10 @@ class AllergiesNew extends Component {
   render() {
     return (
       <div className="flex w-full h-screen px-[4rem] py-[2rem] bg-black bg-opacity-40 justify-center">
-        <div className="relative w-full max-w-[1200px] max-h-full overflow-auto bg-[#FFFFFF] rounded-[8px] shadow-lg box-border">
+        <div className="relative w-full max-w-[1200px] max-h-full bg-[#FFFFFF] rounded-[8px] shadow-lg box-border">
+          {/* Header */}
           <div className="h-fit pb-[2rem] w-full">
             <div className="flex flex-col w-full z-20 gap-[1rem]">
-              {/* Header */}
               <div className="flex bg-[#4169E1] h-[4.25rem] justify-between items-center px-[2rem]">
                 <div className="flex gap-[4rem] text-white font-manrope font-[500] text-[1.5rem]">
                   <div className="font-[600]">Daniel George</div>
@@ -28,6 +28,7 @@ class AllergiesNew extends Component {
                   alt="Cancel Icon"
                 />
               </div>
+
               {/* Content */}
               <div className="px-[2rem]">
                 <div className="font-[600] font-manrope text-[2.25rem]">
@@ -43,6 +44,7 @@ class AllergiesNew extends Component {
                   placeholder="Select one or type here"
                 />
               </div>
+
               {/* Allergy Tags */}
               <div className="flex px-[2rem] gap-[2rem] py-[1rem] flex-wrap">
                 <div className="bg-[#EFEFF4] text-[1rem] text-[#667085] font-[400] font-manrope px-[1rem] py-[0.5rem] rounded-[33px]">
@@ -57,8 +59,14 @@ class AllergiesNew extends Component {
               </div>
             </div>
           </div>
-          <AllergiesAddSymptoms />
-          <div className="absolute bottom-0 py-[2rem] w-full flex justify-center gap-[1rem]">
+
+          {/* Allergy Symptoms Section */}
+          <div className="h-[20rem] overflow-auto px-[2rem]">
+            <AllergiesAddSymptoms />
+          </div>
+
+          {/* Footer */}
+          <div className="absolute h-[8rem] bottom-0 py-[2rem] w-full flex justify-center gap-[1rem] bg-white">
             <button className="border border-[#4169E1] px-[1rem] py-[0.5rem] font-[600] font-manrope text-[#667085] text-[2rem] rounded-[42px]">
               Cancel
             </button>
