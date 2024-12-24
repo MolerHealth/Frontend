@@ -39,3 +39,37 @@
 .css-1sazv7p-MuiStack-root {
   @apply bg-highlightWhite h-[23.875rem] p-0;
 }
+
+/* Custom scrollbar for chat messages */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track background */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #b0b0b0; /* Thumb color */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #888888; /* Thumb color on hover */
+}
+
+/* Date Separator */
+.date-separator {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.date-separator span {
+  background-color: #e0e0e0;
+  color: #555;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
