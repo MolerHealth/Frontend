@@ -3,15 +3,15 @@ import ArrowLeft from "../../../Assets/SVG/ArrowLeft.svg";
 import PrinterIcon from "../../../Assets/SVG/PrinterIcon.svg";
 import AllergiesHome from "./HealthRecord/Allergies/AllergiesHome";
 import MedicationHome from "./HealthRecord/MedicalCondition/MedicationHome";
-import MedicalConditionHome from "./HealthRecord/Medication/MedicationHome";
+import MedicalConditionHome from "./HealthRecord/Medication/MedicalConditionHome";
 import FamilyHistoryHome from "./HealthRecord/FamilyHistory/FamilyHistoryHome";
 import SurgeriesHome from "./HealthRecord/Surgeries/SurgeriesHome";
-import MedicalDocs from "./HealthRecord/MedicalDocs/MedicalDocs";
+import MedicalDocs from "./HealthRecord/MedicalDocs/MedicalDocsHome";
 
 class DoctorPatientsViewHome extends Component {
   render() {
     return (
-      <div className="flex flex-col w-full h-screen px-[1rem] items-center pt-[4rem]">
+      <div className="flex flex-col w-full h-screen px-[1rem] items-center pt-[4rem] bg-white">
         <div className="flex flex-col w-full gap-[1rem]">
           <div className="flex justify-between w-full">
             <div className="flex flex-col gap-[1rem]">
