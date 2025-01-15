@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CancelIcon from "../../../../../Assets/SVG/CancelIcon.svg";
 import FamilyHistoryAddHistory from "./FamilyHistoryAddHistory";
+import { Link } from "react-router-dom";
 
 class FamilyHistoryNew extends Component {
   render() {
@@ -22,11 +23,13 @@ class FamilyHistoryNew extends Component {
                     <div>Male</div>
                   </div>
                 </div>
-                <img
-                  className="size-[2rem]"
-                  src={CancelIcon}
-                  alt="Cancel Icon"
-                />
+                <Link to="/dashboard/patients">
+                  <img
+                    className="size-[2rem]"
+                    src={CancelIcon}
+                    alt="Cancel Icon"
+                  />
+                </Link>
               </div>
 
               {/* Content */}
