@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CancelIcon from "../../../../../Assets/SVG/CancelIcon.svg";
 import MedicalDocsAddDocs from "./MedicalDocsAddDocs";
 import MedicalScreeningDocAddPopUp from "./MedicalScreeningDocAddPopUp";
+import { Link } from "react-router-dom";
 
 class MedicalDocsNew extends Component {
   render() {
@@ -23,11 +24,13 @@ class MedicalDocsNew extends Component {
                     <div>Male</div>
                   </div>
                 </div>
-                <img
-                  className="size-[2rem]"
-                  src={CancelIcon}
-                  alt="Cancel Icon"
-                />
+                <Link to="/dashboard/patients">
+                  <img
+                    className="size-[2rem]"
+                    src={CancelIcon}
+                    alt="Cancel Icon"
+                  />
+                </Link>
               </div>
 
               <div className="flex w-full justify-between px-[2rem]">
