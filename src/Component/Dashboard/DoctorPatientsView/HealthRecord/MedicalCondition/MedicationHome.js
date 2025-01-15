@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MedicationIcon from "../../../../../Assets/SVG/MedicationIcon.svg";
 import AddBotton from "../../../../../Assets/SVG/AddBotton.svg";
 import TrashIcon from "../../../../../Assets/SVG/TrashIcon.svg";
+import { Link } from "react-router-dom";
 
 class MedicationHome extends Component {
   render() {
@@ -19,16 +20,18 @@ class MedicationHome extends Component {
                 Medications
               </div>
             </div>
-            <div className="flex gap-[1rem] items-center">
-              <div className="font-[400] font-manrope text-[1.25rem] text-[#4169E1]">
-                ADD
+            <Link to="/dashboard/patients/medication">
+              <div className="flex gap-[1rem] items-center">
+                <div className="font-[400] font-manrope text-[1.25rem] text-[#4169E1]">
+                  ADD
+                </div>
+                <img
+                  className="size-[1.25rem]"
+                  src={AddBotton}
+                  alt="Allergy Icon"
+                />
               </div>
-              <img
-                className="size-[1.25rem]"
-                src={AddBotton}
-                alt="Allergy Icon"
-              />
-            </div>
+            </Link>
           </div>
           <div className="px-[1rem] flex flex-col gap-[1rem]">
             <div className="flex items-center justify-between">
