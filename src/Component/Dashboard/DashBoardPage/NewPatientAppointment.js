@@ -4,7 +4,7 @@ import DotMenuSVG from "../../../Assets/SVG/DotsMenuSVG.svg";
 class NewPatientAppointment extends Component {
   render() {
     return (
-      <div className="flex w-[30rem] h-[26.25rem] bg-highlightWhite justify-center">
+      <div className="flex w-[32rem] h-[26.25rem] bg-highlightWhite justify-center">
         <div className="flex flex-col py-[3rem] gap-[1rem]">
           <div className="font-[600] text-[#333333] text-[1rem] font-mona leading-[1.32rem]">
             New Patient Appointment
