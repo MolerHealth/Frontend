@@ -9,7 +9,7 @@
 @import url("https://fonts.cdnfonts.com/css/mona-sans");
 
 .react-calendar__navigation {
-  @apply text-blue-600 font-[700] font-mona text-lg flex justify-between items-center py-2;
+  @apply text-blue-600 font-[700] w-full font-mona text-lg flex justify-between items-center px-[1rem];
 }
 
 .react-calendar__navigation button {
@@ -32,10 +32,44 @@
   @apply !bg-[#4169E1];
 }
 
+.react-calendar__tile--month-view {
+  @apply !text-white;
+}
 .react-calendar__tile--active {
   @apply !bg-[#4169E1] rounded-[50%];
 }
 
+.react-calendar__tile {
+  @apply !w-[5rem] !h-[4.4rem];
+}
 .css-1sazv7p-MuiStack-root {
   @apply bg-highlightWhite h-[23.875rem] p-0;
+}
+
+.react-calendar {
+  @apply bg-white px-[1rem]
+}
+
+abbr[aria-label="January 2025"] {
+  @apply text-white;
+}
+
+/* .react-calendar__decade-view__years {
+  @apply text-white;
+} */
+
+/* .react-calendar__tile--decade-view {
+  @apply text-white;
+} */
+
+.react-calendar__tile--hasActive {
+  @apply !bg-none;
+}
+
+.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--hasActive.react-calendar__decade-view__years__year {
+  @apply !text-white;
+}
+
+.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--hasActive.react-calendar__century-view__decades__decade {
+  @apply !text-white;
 }
