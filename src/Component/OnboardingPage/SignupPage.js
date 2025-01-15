@@ -5,7 +5,7 @@ class SignUpPage extends Component {
   render() {
     return (
       <div className="w-full h-lvh flex justify-center items-center">
-        <div className="w-[37.313rem] h-[41.5rem] flex flex-col items-center justify-center gap-[2rem]">
+        <div className="w-fit px-[4rem] h-fit py-[4rem] flex flex-col items-center justify-center gap-[2rem]">
           <div className="w-[17.688rem] h-[4.5rem] flex flex-col gap-[0.563rem]">
             <h1 className="font-mona font-[700] text-[2rem] leading-[2.64rem] text-center">
               Sign Up
@@ -84,9 +84,9 @@ class SignUpPage extends Component {
             </button>
           </div>
           <div className="flex flex-col items-center gap-2">
-            <Link className="text-[#174ef1] text-center">
+            <Link to={"/login"} className="text-[#174ef1] text-center">
               Already have an account? <br />
-              Sign up
+              Login
             </Link>
           </div>
         </div>
