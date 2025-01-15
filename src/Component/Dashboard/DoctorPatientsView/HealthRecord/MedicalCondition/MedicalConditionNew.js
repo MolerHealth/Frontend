@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CancelIcon from "../../../../../Assets/SVG/CancelIcon.svg";
 import MedicalConditionAddCondition from "./MedicalConditionAddCondition";
+import { Link } from "react-router-dom";
 
 class MedicalConditionNew extends Component {
   render() {
@@ -22,11 +23,13 @@ class MedicalConditionNew extends Component {
                     <div>Male</div>
                   </div>
                 </div>
-                <img
-                  className="size-[2rem]"
-                  src={CancelIcon}
-                  alt="Cancel Icon"
-                />
+                <Link to="/dashboard/patients">
+                  <img
+                    className="size-[2rem]"
+                    src={CancelIcon}
+                    alt="Cancel Icon"
+                  />
+                </Link>
               </div>
 
               {/* Content */}
