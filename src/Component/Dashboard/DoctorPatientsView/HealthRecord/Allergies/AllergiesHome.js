@@ -3,6 +3,7 @@ import AllergyIcon from "../../../../../Assets/SVG/AlergiesIcon.svg";
 import AddBotton from "../../../../../Assets/SVG/AddBotton.svg";
 import TrashIcon from "../../../../../Assets/SVG/TrashIcon.svg";
 import WarningIcon from "../../../../../Assets/SVG/WarningIcon.svg";
+import { Link } from "react-router-dom";
 
 class AllergiesHome extends Component {
   render() {
@@ -20,16 +21,19 @@ class AllergiesHome extends Component {
                 Allergies
               </div>
             </div>
-            <div className="flex gap-[1rem] items-center">
-              <div className="font-[400] font-manrope text-[1.25rem] text-[#4169E1]">
-                ADD
+            <Link to="/dashboard/patients/allergies">
+              <div className="flex gap-[1rem] items-center">
+                <div className="font-[400] font-manrope text-[1.25rem] text-[#4169E1]">
+                  ADD
+                </div>
+
+                <img
+                  className="size-[1.25rem]"
+                  src={AddBotton}
+                  alt="Allergy Icon"
+                />
               </div>
-              <img
-                className="size-[1.25rem]"
-                src={AddBotton}
-                alt="Allergy Icon"
-              />
-            </div>
+            </Link>
           </div>
           <div className="px-[1rem]">
             <div className="flex items-center justify-between">
