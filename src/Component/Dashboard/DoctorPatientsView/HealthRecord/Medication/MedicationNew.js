@@ -1,10 +1,69 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import CancelIcon from "../../../../../Assets/SVG/CancelIcon.svg";
 import MedicationAddMedicine from "./MedicationAddMedicine";
-import { Link } from "react-router-dom";
 
 class MedicationNew extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // Each medication: { name, strength, consumptionType, etc. }
+      medications: [],
+      newMedName: "",
+    };
+  }
+
+  handleMedInputChange = (e) => {
+    this.setState({ newMedName: e.target.value });
+  };
+
+  handleMedKeyDown = (e) => {
+    if (e.key === "Enter") {
+      const trimmed = this.state.newMedName.trim();
+      if (!trimmed) return;
+
+      // Build initial object with blank fields for the medication
+      const newMedication = {
+        name: trimmed,
+        strength: "",
+        consumptionType: "",
+        timeFrame: "",
+        quantityPerDosage: "",
+        secondTimeFrame: "",
+        dosage: "asNeeded", // could be asNeeded or asScheduled
+        doseSchedules: "",
+      };
+
+      this.setState({
+        medications: [...this.state.medications, newMedication],
+        newMedName: "",
+      });
+    }
+  };
+
+  // Called by <MedicationAddMedicine> when fields are edited
+  handleUpdateMedications = (updatedArray) => {
+    this.setState({ medications: updatedArray });
+  };
+
+  handleSaveAndExit = () => {
+    const { medications } = this.state;
+    const existing = JSON.parse(localStorage.getItem("medications")) || [];
+    const merged = [...existing, ...medications];
+    localStorage.setItem("medications", JSON.stringify(merged));
+
+    // Example: navigate away
+    // this.props.history.push("/dashboard/patients");
+    window.location.href = "#/dashboard/patients";
+  };
+
+  handleCancel = () => {
+    window.location.href = "#/dashboard/patients";
+  };
+
   render() {
+    const { medications, newMedName } = this.state;
+
     return (
       <div className="flex w-full h-screen px-[4rem] py-[2rem] bg-black bg-opacity-40 justify-center">
         <div className="relative w-full max-w-[1200px] max-h-full bg-[#FFFFFF] rounded-[8px] shadow-lg box-border">
@@ -38,42 +97,57 @@ class MedicationNew extends Component {
                   Add New Medications
                 </div>
                 <div className="font-[400] font-manrope text-[#333333] text-[1.5rem]">
-                  press “tab” if you cannot find the medication on the list
+                  Press “Enter” if you cannot find the medication on the list
                 </div>
               </div>
+
+              {/* Input for new medication */}
               <div className="flex w-full h-[3.25rem] px-[2rem]">
                 <input
                   className="text-[#667085] font-[600] font-manrope text-[1.25rem] px-[1rem] w-full rounded-[3px] border border-[#E5E5E5] focus:border-[#4169E1] outline-none"
-                  placeholder="Select one or type here"
+                  placeholder="Type a medication name & press Enter"
+                  value={newMedName}
+                  onChange={this.handleMedInputChange}
+                  onKeyDown={this.handleMedKeyDown}
                 />
               </div>
 
-              {/* Allergy Tags */}
-              <div className="flex px-[2rem] gap-[2rem] py-[1rem] flex-wrap">
-                <div className="bg-[#EFEFF4] text-[1rem] text-[#667085] font-[400] font-manrope px-[1rem] py-[0.5rem] rounded-[33px]">
-                  Aspirin
+              {/* Tags (medication names) */}
+              {medications.length > 0 && (
+                <div className="flex px-[2rem] gap-[2rem] py-[1rem] flex-wrap">
+                  {medications.map((med, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-[#EFEFF4] text-[1rem] text-[#667085] font-[400] font-manrope px-[1rem] py-[0.5rem] rounded-[33px]"
+                    >
+                      {med.name}
+                    </div>
+                  ))}
                 </div>
-                <div className="bg-[#EFEFF4] text-[1rem] text-[#667085] font-[400] font-manrope px-[1rem] py-[0.5rem] rounded-[33px]">
-                  Maraviroc (selzentry)
-                </div>
-                <div className="bg-[#EFEFF4] text-[1rem] text-[#667085] font-[400] font-manrope px-[1rem] py-[0.5rem] rounded-[33px]">
-                  Penicillin
-                </div>
-              </div>
+              )}
             </div>
           </div>
 
-          {/* Allergy Symptoms Section */}
+          {/* Body: pass 'medications' to <MedicationAddMedicine> */}
           <div className="h-[20rem] overflow-auto px-[2rem]">
-            <MedicationAddMedicine />
+            <MedicationAddMedicine
+              medications={medications}
+              onUpdateMedications={this.handleUpdateMedications}
+            />
           </div>
 
           {/* Footer */}
           <div className="absolute h-[8rem] bottom-0 py-[2rem] w-full flex justify-center gap-[1rem] bg-white">
-            <button className="border border-[#4169E1] px-[1rem] py-[0.5rem] font-[600] font-manrope text-[#667085] text-[2rem] rounded-[42px]">
+            <button
+              onClick={this.handleCancel}
+              className="border border-[#4169E1] px-[1rem] py-[0.5rem] font-[600] font-manrope text-[#667085] text-[2rem] rounded-[42px]"
+            >
               Cancel
             </button>
-            <button className="px-[1rem] py-[0.5rem] font-[600] font-manrope text-[#667085] text-[2rem] bg-[#E5E5E5] rounded-[42px]">
+            <button
+              onClick={this.handleSaveAndExit}
+              className="px-[1rem] py-[0.5rem] font-[600] font-manrope text-[#667085] text-[2rem] bg-[#E5E5E5] rounded-[42px]"
+            >
               Save & Exit
             </button>
           </div>
